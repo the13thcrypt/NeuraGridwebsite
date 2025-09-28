@@ -1,0 +1,89 @@
+.fancy-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: inherit;
+  font-size: 1.1rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  border: none; /* Removed default border for cleaner look */
+  padding: 0; /* Remove default padding */
+  background: transparent; /* Base button is transparent */
+  will-change: transform, box-shadow;
+}
+
+/* Inner container for styling, allows for more complex effects */
+.fancy-button__inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  background: var(--btn-bg-color, rgba(255, 255, 255, 0.1));
+  border: 1px solid var(--btn-border-color, rgba(255, 255, 255, 0.2));
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.fancy-button__glow {
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  pointer-events: none;
+  background: transparent;
+  mix-blend-mode: overlay;
+  opacity: 0.7;
+  z-index: -1;
+  will-change: background;
+}
+
+.fancy-button__text {
+  position: relative;
+  z-index: 1;
+  color: var(--btn-text-color, #ffffff);
+}
+
+/* --- FIX ---
+   We target the text inside the primary button directly
+   to ensure its color is dark.
+*/
+.fancy-button--primary .fancy-button__text {
+  color: #fef8f8;
+}
+
+.fancy-button--primary .fancy-button__inner {
+  background: #ffffff;
+  border-color: #ffffff;
+}
+
+.fancy-button:hover:not(.fancy-button--primary) .fancy-button__inner {
+  background: var(--btn-hover-bg-color, rgba(255, 255, 255, 0.15));
+  border-color: rgba(132, 0, 255, 0.6);
+}
+.fancy-button:hover:not(.fancy-button--primary) {
+  box-shadow: 0 0 25px rgba(132, 0, 255, 0.4);
+}
+
+.fancy-button--primary:hover .fancy-button__inner {
+  background: #f0f0f0; /* Slightly darker white on hover */
+}
+.fancy-button--primary:hover {
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  .fancy-button, .fancy-button:hover {
+    transform: none !important;
+    box-shadow: none !important;
+    transition: none !important;
+  }
+  .fancy-button__glow {
+    display: none !important;
+  }
+}

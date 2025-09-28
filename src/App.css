@@ -1,0 +1,168 @@
+/* === GLOBAL RESET & DEFAULTS === */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  overflow-x: hidden;
+  position: relative; /* Needed for z-index context */
+}
+
+/* Styles for the permanent background canvas */
+.background-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: -1; /* Pushes the canvas behind all other content */
+}
+
+/* Ensure all page content has a transparent background to see the canvas */
+.hero-section, .home-section, .content-wrapper {
+    background-color: transparent;
+}
+
+/* === HERO SECTION STYLES (HOMEPAGE) === */
+.hero-section {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem 1rem;
+  padding-top: 80px;
+  box-sizing: border-box;
+}
+
+.main-tagline {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.sub-headline {
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  max-width: 700px;
+  margin: 0 auto 2.5rem;
+  color: #c9c3e2;
+  line-height: 1.6;
+}
+
+.cta-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.cta-buttons a {
+  text-decoration: none;
+}
+
+/* === STANDARD PAGE & SECTION STYLES === */
+.content-wrapper {
+  width: 100%;
+  max-width: 1280px;
+  min-height: 100vh;
+  padding: 120px 1.5rem 5rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+}
+
+.page-headline {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 0;
+}
+
+.page-intro {
+  max-width: 800px;
+  margin: 1rem auto 0;
+  text-align: center;
+  color: #c9c3e2;
+  font-size: 1.2rem;
+  line-height: 1.7;
+}
+
+/* Styles for subheadlines on pages like the Founder page */
+.section-subheadline {
+  font-size: 2rem;
+  font-weight: 500;
+  color: #fff;
+  text-align: center;
+  width: 100%;
+  margin-top: 2rem;
+  margin-bottom: -1rem; /* Pulls the grid closer */
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* === PREMIUM ABOUT PAGE STYLES === */
+.about-hero {
+  text-align: center;
+  width: 100%;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 4rem;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  width: 100%;
+}
+
+.about-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 2.5rem;
+  border-radius: 16px;
+  text-align: left;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.about-card:hover {
+  background: rgba(255, 255, 255, 0.05);
+  transform: translateY(-5px);
+}
+
+.about-card.full-width-card {
+  grid-column: 1 / -1;
+  text-align: center;
+}
+
+.about-card h3 {
+  font-size: 1.75rem;
+  color: #fff;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.about-card p {
+  color: #c9c3e2;
+  line-height: 1.7;
+  font-size: 1.1rem;
+}
+
+@media (max-width: 768px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+}
+

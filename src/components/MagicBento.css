@@ -1,0 +1,145 @@
+:root {
+  --border-color: #392e4e;
+  --background-dark: #060010;
+}
+
+.card-grid {
+  display: grid;
+  gap: 1rem;
+  width: 100%;
+  max-width: 54em;
+  font-size: clamp(1rem, 0.9rem + 0.5vw, 1.5rem);
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  aspect-ratio: 4/3;
+  min-height: 200px;
+  width: 100%;
+  padding: 1.5em;
+  border-radius: 20px;
+  border: 1px solid var(--border-color);
+  background: var(--background-dark);
+  font-weight: 300;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+}
+
+.card__header,
+.card__content {
+  display: flex;
+  position: relative;
+  color: #fff;
+  z-index: 5;
+}
+
+.card__header {
+  justify-content: space-between;
+}
+
+.card__content {
+  flex-direction: column;
+  text-align: left;
+}
+
+.card__label {
+  font-size: 1rem;
+  color: #c9c3e2;
+}
+
+.card__title,
+.card__description {
+  --clamp-title: 2;
+  --clamp-desc: 3;
+  word-break: break-word;
+}
+
+.card__title {
+  font-weight: 500;
+  font-size: 1.25rem;
+  margin: 0 0 0.5em;
+  color: #fff;
+}
+
+.card__description {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #c9c3e2;
+}
+
+.card--text-autohide .card__title,
+.card--text-autohide .card__description {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.card--text-autohide .card__title { -webkit-line-clamp: var(--clamp-title); }
+.card--text-autohide .card__description { -webkit-line-clamp: var(--clamp-desc); }
+
+
+/* === DESKTOP LAYOUT BREAKPOINTS === */
+@media (min-width: 769px) {
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .card-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .card:nth-child(3) { grid-column: span 2; grid-row: span 2; }
+  .card:nth-child(4) { grid-column: 1 / span 2; grid-row: 2 / span 2; }
+  .card:nth-child(6) { grid-column: 4; grid-row: 3; }
+}
+
+
+/* === NEW MOBILE "FULL-SCREEN CARD" LAYOUT === */
+@media (max-width: 768px) {
+  .card-grid {
+    grid-template-columns: 1fr;
+    width: 100%; /* Ensure grid takes full width */
+    gap: 0; /* Remove gap between cards */
+  }
+
+  .card {
+    /* Remove all box-like properties */
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    background: transparent;
+    
+    /* Let content define the height */
+    aspect-ratio: unset;
+    min-height: unset;
+
+    /* Add a border to separate each card */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 2.5rem 1rem; /* Adjust padding for full-width layout */
+  }
+
+  /* Remove hover effect on mobile, use active state for tap feedback */
+  .card:hover {
+    transform: none;
+  }
+  
+  .card:active {
+    background-color: rgba(255, 255, 255, 0.03); /* Subtle tap feedback */
+  }
+
+  /* Make the first card's top border visible */
+  .card:first-child {
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+}
+

@@ -1,0 +1,121 @@
+/* === VIDEO BANNER STYLES === */
+.media-hero-banner {
+  position: relative;
+  width: 100%;
+  height: 60vh; /* Sets the height of the banner */
+  max-height: 500px;
+  overflow: hidden;
+  border-radius: 16px;
+  background-color: #060010; /* Fallback background */
+}
+
+.media-hero-banner iframe {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%, -50%);
+  pointer-events: none; /* Prevents interaction with the background video */
+}
+
+.video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(to top, rgba(6, 0, 16, 0.8) 0%, rgba(6, 0, 16, 0.2) 100%);
+}
+
+.video-overlay .page-headline {
+  color: #fff;
+  text-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+
+/* === CHANNEL GRID STYLES === */
+.channel-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  width: 100%;
+  margin-top: 2rem;
+}
+
+.channel-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 2rem;
+  border-radius: 16px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.channel-card:hover {
+  background: rgba(255, 255, 255, 0.05);
+  transform: translateY(-5px);
+}
+
+.channel-card h3 {
+  font-size: 1.75rem;
+  color: #fff;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.channel-card p {
+  color: #c9c3e2;
+  line-height: 1.6;
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  /* MODIFIED: Removed flex-grow to allow the button to control spacing */
+}
+
+/* Responsive video container */
+.video-responsive {
+  position: relative;
+  overflow: hidden;
+  padding-top: 56.25%; /* 16:9 Aspect Ratio */
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+}
+
+.video-responsive iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* Channel link button */
+.channel-button {
+  display: inline-block; /* Allows for padding and keeps width flexible */
+  text-align: center;
+  
+  /* --- MODIFIED: This is the definitive centering fix --- */
+  align-self: center; /* Centers the button horizontally in the flex container */
+  margin-top: auto;   /* Pushes the button to the bottom of the card */
+  
+  padding: 1rem 2.5rem; /* More horizontal padding for a better shape */
+  background-color: #8B5CF6;
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 500;
+  text-decoration: none;
+  border-radius: 12px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.channel-button:hover {
+  background-color: #7c4dff;
+  transform: scale(1.02);
+}
+

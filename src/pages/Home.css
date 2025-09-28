@@ -1,0 +1,132 @@
+/* Styling for the main hero section */
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+  padding: 0 1rem;
+  box-sizing: border-box;
+}
+
+.background-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+/* Main text content styling */
+.main-tagline {
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.sub-headline {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  color: #c9c3e2;
+  max-width: 700px;
+  margin: 0 auto 2.5rem auto;
+  line-height: 1.6;
+}
+
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.button-text {
+  font-weight: 500;
+  font-size: 1rem;
+  color: #fff;
+}
+
+/* Styling for content sections below the hero */
+.home-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5rem 0;
+  width: 100%;
+  text-align: center;
+}
+
+.section-headline {
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin-bottom: 1rem;
+}
+
+.section-intro {
+  font-size: 1.1rem;
+  color: #c9c3e2;
+  max-width: 800px;
+  line-height: 1.6;
+  margin-bottom: 3rem;
+}
+
+/* The Neuragrid Advantage section */
+.advantage-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  width: 100%;
+  text-align: left;
+  margin-top: 3rem;
+}
+
+.advantage-point {
+  background-color: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 2rem;
+  border-radius: 16px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.advantage-point:hover {
+    background-color: rgba(255, 255, 255, 0.07);
+    transform: translateY(-5px);
+}
+
+.advantage-point h4 {
+  font-size: 1.25rem;
+  color: #fff;
+  margin-bottom: 0.75rem;
+}
+
+.advantage-point p {
+  color: #c9c3e2;
+  line-height: 1.6;
+}
+
+/* Final Call-to-Action Section */
+.cta-section {
+    padding: 5rem 1rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.cta-headline {
+    font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+}
+
+.cta-subtext {
+    font-size: 1.1rem;
+    color: #c9c3e2;
+    max-width: 600px;
+    margin: 1rem auto 2.5rem auto;
+}

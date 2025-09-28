@@ -1,0 +1,89 @@
+/* Hero section styling for the top of the page */
+.services-hero {
+  text-align: center;
+  width: 100%;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 4rem;
+}
+
+/* Grid container for the service cards */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  width: 100%;
+}
+
+/* Individual service card styling */
+.service-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 2.5rem;
+  border-radius: 16px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.service-card:hover {
+  background: rgba(255, 255, 255, 0.05);
+  transform: translateY(-5px);
+}
+
+.service-card h3 {
+  font-size: 1.75rem;
+  color: #fff;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.service-card p {
+  color: #c9c3e2;
+  line-height: 1.7;
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Styling for the bullet-point lists */
+.service-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-top: auto; /* Pushes the list to the bottom */
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.service-card li {
+  color: #c9c3e2;
+  font-size: 1rem;
+  padding-left: 1.5em;
+  position: relative;
+}
+
+.service-card li:not(:last-child) {
+  margin-bottom: 0.75rem;
+}
+
+/* Custom checkmark-style bullet point */
+.service-card li::before {
+  content: '✓';
+  color: #8B5CF6; /* Purple accent color */
+  position: absolute;
+  left: 0;
+  top: 1px;
+}
+
+/* Styling for the final call-to-action card */
+.cta-card {
+  grid-column: 1 / -1; /* Makes the card span the full width */
+  text-align: center;
+  background: linear-gradient(45deg, rgba(139, 92, 246, 0.1), rgba(6, 0, 16, 0.1));
+  border-color: rgba(139, 92, 246, 0.3);
+}
+
+.cta-card h3 {
+    font-size: 2rem;
+}
